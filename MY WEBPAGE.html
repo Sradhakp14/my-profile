@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webpage</title>
+    <style>
+        body
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20px;
+        }
+        header
+        {
+            padding: 10px;
+            text-align: center;
+        }
+        section
+        {
+            margin-top: 20px;
+        }
+        
+        tr
+        {
+            transition: transform 1s ease-in-out;
+        }
+        tr:hover
+        {
+            transform: scale(1.1); 
+        }
+        h3
+        {
+            text-align: start;
+            margin-top: 50px;
+        }
+        form
+        {
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            padding: 30px;
+             transition: transform 1s ease-in-out;
+        }
+        form:hover
+
+        {
+           transform: scale(1.1);
+        }
+        footer{
+            font-size: xx-small;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1><u>Students Information Table</u></h1>
+    </header>
+    <section>
+        <table style="width: 100%;" border="1">
+            <tr>
+                <tr style="height: 100px;"><th>Names</th><th>Grades</th><th>Ages</th></tr>  
+                <tr style="height: 100px;"><th>Aravind</th><th>A+</th><th>15</th></tr> 
+                <tr style="height: 100px;"><th>Pranav</th><th>A</th><th>15</th></tr>
+                <tr style="height: 100px;"><th>Sarun</th><th>A+</th><th>16</th></tr>  
+                <tr style="height: 100px;"><th>Sravan</th><th>B+</th><th>18</th></tr>  
+                <tr style="height: 100px;"><th>Revathi</th><th>A</th><th>14</th></tr>  
+                <tr style="height: 100px;"><th>Sanusha</th><th>D+</th><th>14</th></tr>  
+                <tr style="height: 100px;"><th>Swetha</th><th>B+</th><th>19</th></tr>  
+                <tr style="height: 100px;"><th>nandhana</th><th>C+</th><th>18</th></tr>     
+            </tr>
+        </table>
+    </section>
+    <section>
+        <h3>select your class:</h3>
+        <form action="">
+            <fieldset>
+                <label for="">select your class</label>
+                <select name="class" id="class">
+                    <option value="10">Class 10</option>
+                    <option value="+2">Pluse Two</option>
+                     <option value="+1">Plus One</option>
+                </select>
+                <br>
+                <br>
+                <input type="checkbox" name="Maths" id="Maths"><label for="">Maths</label>
+                <input type="checkbox" name="Physics" id="Physics"><label for="">Physics</label>
+                <input type="checkbox" name="Chemistry" id="Chemistry"><label for="">Chemistry</label>
+                <br>
+                <br>
+                <button type="submit">sumbit</button>
+            </fieldset>
+        </form>
+    </section>
+
+    <footer>
+        <P><p>© 2025 Student Info Page</p></P>
+    </footer>
+</body>
+</html>
