@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --back-color:pink;
+            --heading-color:rgb(212, 234, 14);
+
+        }
+        p{
+            background-color:var(--back-color);
+            padding: 10px;
+        }
+        
+      body{
+        display: grid;
+        grid-template-columns: repeat(4,auto);
+      }
+      .container
+      {
+        display: grid;
+        grid-template-columns: repeat(4,auto);
+        padding: 5px;
+        
+      }
+      .inner1 {
+            background-color: beige;
+            border: 2px solid black;
+            padding: 40px;
+      }
+      
+      @media (min-width:950px){
+            .container{
+                display: grid;
+                grid-template-columns: repeat(4,auto);
+            }
+            .inner1{
+                background-color: aquamarine;
+            }
+        }
+        @media (min-width:601px) and (max-width:900px){
+            .container{
+                display: grid;
+                grid-template-columns: repeat(3,auto);
+            }
+            .inner1{
+                background-color: rgb(22, 228, 36);
+            }
+        }
+        @media (max-width:600px){
+            .container{
+                display: grid;
+                grid-template-columns: repeat(1,auto);
+            }
+        }
+        @keyframes fadeIn {
+               from { opacity: 0; }
+                 to { opacity: 1; }
+        }
+
+        div {
+          animation: fadeIn 4s ease-in;
+        }
+            
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="inner1"><P>A film, also known as a movie or motion picture, is a series of moving images that tell a story, communicate ideas, or evoke emotions. Films are a powerful form of visual art and entertainment, using synchronized images and sound to create a simulated experience. </P></div>
+    <div class="inner1"><P>A movie actor is a performer who embodies characters in films, bringing stories to life on screen through their acting. They interpret scripts, develop characters, and work with directors and other crew members to create a compelling on-screen performance. </P></div>
+    <div class="inner1"><P>JavaScript is a high-level, often just-in-time compiled, programming language that is primarily used to create interactive and dynamic content on websites.</P></div>
+    <div class="inner1"><P>generally means to journey from place to place, often without a specific destination or itinerary in mind, or to explore a region or area in a general sense.</P></div>
+    </div>
+</body>
+</html>
