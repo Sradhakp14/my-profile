@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let i = 1;
+        while(i <= 10){
+            console.log(i);
+            i++;
+        }
+        
+        let count = 1;
+        while (count <= 10){
+            let mul = count*5
+           console.log(`5 x ${count} = ${mul}`);
+           count = count+1
+        }
+
+
+       let x = 10;
+       while(x >= 1){
+        console.log(x);
+        x--;
+       }
+   
+
+    let menu;
+    do {
+        menu = Number(prompt("press 1 for order Pizza", + "press 2 for order Burger ", + "press 3 for Exit"));
+         switch (menu) {
+            case "1":
+                console.log("you order pizza");
+                break;
+        case "2": 
+        console.log("you order Burger");
+        break;
+        
+        case "3":
+            console.log("Exit");
+            break;
+
+            default:
+                console.log("Exit the menu");
+                break;
+         }
+    }while(menu == "3");
+
+        const num = 5;
+        let abc = "";
+
+        do{
+          abc = Number(prompt("Enter a number"))
+        }while(abc !== num);
+        alert("you are correct");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
