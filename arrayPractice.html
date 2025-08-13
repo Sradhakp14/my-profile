@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let food = ["biriyani","noodles","veg meals","fried rice","alfam"];
+        food.push("sandwich","pizza");
+        console.log(food);
+
+        let food1 = ["biriyani","noodles","veg meals","fried rice","alfam"];
+        food.shift();
+        console.log(food1);
+
+         let food2 = ["biriyani","noodles","veg meals","fried rice","alfam"];
+         console.log(food2.indexOf("noodles"));
+
+         let food3 = ["biriyani","noodles","veg meals","fried rice","alfam"];
+         console.log(food3.includes("burger"));
+
+          let food4 = ["biriyani","noodles","veg meals","fried rice","alfam"];
+        console.log(food4.slice(0,3));
+
+        let food5 = ["biriyani","noodles","veg meals","fried rice","alfam"];
+        console.log(food5.splice(2,1));
+
+        let foods = ["biriyani","noodles","veg meals","fried rice","alfam"];
+        foods.forEach(foods =>{
+         console.log(foods)
+        })
+    </script>
+</body>
+</html>
