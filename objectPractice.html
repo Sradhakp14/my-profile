@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let student = {
+            name : "sradha",
+            batch : "kochi",
+            marks : 50,
+           displayInfo(){
+           console.log(`Hai, ${this.name} , batch :${this.batch} , marks : ${this.marks}`);
+           },
+        }
+        console.log(student);
+        student.displayInfo();
+        student.city = "tvm"
+        console.log(student);
+
+        delete student.marks
+        console.log(student);
+
+         //destructing
+
+        let studentName = student.name;
+        console.log(student.name);
+
+        let studentCourse = student.batch;
+        console.log(student.batch);
+        
+        let {name , batch} = student 
+        console.log(name);
+        console.log(batch);
+
+        function show(name,course){
+          console.log(` Student name: ${name} and learing ${course}`)
+        }
+        show("sarun","desining")
+    </script>
+</body>
+</html>
