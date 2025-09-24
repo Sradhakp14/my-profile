@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Employee{
+            #bonus = 0;
+
+           constructor(name,salary){
+            this.name = name;
+            this.salary = salary;
+            this.#bonus = 0;
+           }
+           displayDetalis(){
+            console.log(` Name : ${this.name} and ${this.salary}`);
+           }
+           newProperty(){
+            console.log(` ${this.#bonus} `);
+           }
+        }
+
+        let objOne =  new Employee("reenu", 15000);
+        console.log(objOne.newProperty());
+        let objTwo = new Employee("reenu", 10000);
+        console.log(objTwo.newProperty());
+        
+        class BankAccount{
+    #balance;
+
+    constructor() {
+        this.#balance = 0;
+    }
+
+    
+    deposit(amount) {
+        if (amount > 0) {
+            this.#balance += amount;
+            console.log(`Deposit of $${amount} was successful.`);
+        } else {
+            console.log("Deposit amount must be greater than 0.");
+        }
+    }
+
+    getBalance() {
+        return this.#balance;
+    }
+}
+
+const account = new BankAccount();
+account.deposit(1000); 
+
+console.log("\n");
+const job = {
+    title: "Developer",
+    level: "Junior"
+};
+
+const { title, level } = job;
+console.log(`Title: ${title}`);
+console.log(`Level: ${level}`);
+        
+    </script>
+</body>
+</html>
