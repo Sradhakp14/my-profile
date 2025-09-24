@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Vehicle{
+            constructor(name){
+                this.name = name;
+            }
+            startEngine(){
+                console.log("this is a vehicle")
+            }
+        }
+
+        class Car extends Vehicle{
+            constructor(name){
+             super(name)
+            }
+            drive(){
+                console.log("the car is started")
+            }
+
+            startEngine(){
+                console.log("reday to move")
+            }
+        }
+        const bike = new Vehicle();
+        const car = new Car();
+        car.startEngine();
+        bike.startEngine();
+
+
+
+        function Person(name){
+           this.name = name;
+        }
+        Person.prototype.greet = function(){
+            console.log(`hello, i'm ${this.name}`);
+        };
+
+        const Person1 = new Person("reenu");
+        Person1.greet();
+        
+
+    Number.prototype.isEven = function () {
+    return this % 2 === 0;
+};
+
+const num = 42;
+console.log(`${num} is even? ${num.isEven()}`);
+
+const num2 = 17;
+console.log(`${num2} is even? ${num2.isEven()}`);
+
+    </script>
+</body>
+</html>
