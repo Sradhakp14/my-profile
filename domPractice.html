@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DOM Practice</title>
+</head>
+<body>
+  <h1 id="main-heading">Welcome to DOM Practice!</h1>
+
+  <input type="text" id="user-input" placeholder="Type new heading..." />
+  <button id="change-heading-btn">Change Heading</button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const heading = document.getElementById('main-heading');
+      const input = document.getElementById('user-input');
+      const changeBtn = document.getElementById('change-heading-btn');
+
+      heading.style.color = 'blue';
+      changeBtn.addEventListener('click', () => {
+        const newText = input.value.trim();
+        if (newText !== '') {
+          heading.textContent = newText;
+
+          const para = document.createElement('p');
+          para.textContent = 'You have changed the heading!';
+          para.id = 'message-para'; 
+          document.body.appendChild(para);
+
+          const removeBtn = document.createElement('button');
+          removeBtn.textContent = 'Remove Message';
+          removeBtn.id = 'remove-btn';
+          document.body.appendChild(removeBtn);
+
+          removeBtn.addEventListener('click', () => {
+            para.remove();
+            removeBtn.remove();
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
