@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title></title>
+</head>
+<body>
+  <h2>Form Validation</h2>
+  <form id="myForm">
+    <div class="form-group">
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" /><br />
+      <div class="error" id="name-error"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label><br />
+      <input type="text" id="email" /><br />
+      <div class="error" id="email-error"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label><br />
+      <input type="password" id="password" /><br />
+      <div class="error" id="password-error"></div>
+    </div>
+
+    <button type="submit">Submit</button>
+    <button type="button" id="resetBtn">Reset</button>
+  </form>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('myForm');
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const passwordInput = document.getElementById('password');
+
+      const nameError = document.getElementById('name-error');
+      const emailError = document.getElementById('email-error');
+      const passwordError = document.getElementById('password-error');
+
+      const resetBtn = document.getElementById('resetBtn');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault(); 
+
+        nameError.textContent = '';
+        emailError.textContent = '';
+        passwordError.textContent = '';
+
+        let isValid = true;
+
+        if (nameInput.value.trim() === '') {
+          nameError.textContent = 'Name is required.';
+          isValid = false;
+        }
+
+        const emailValue = emailInput.value.trim();
+        if (emailValue === '') {
+          emailError.textContent = 'Email is required.';
+          isValid = false;
+        } else if (!emailValue.includes('@') || !emailValue.includes('.')) {
+          emailError.textContent = 'Invalid email format.';
+          isValid = false;
+        }
+
+
+        const passwordValue = passwordInput.value;
+        if (passwordValue === '') {
+          passwordError.textContent = 'Password is required.';
+          isValid = false;
+        } else if (passwordValue.length < 6) {
+          passwordError.textContent = 'Password must be at least 6 characters.';
+          isValid = false;
+        }
+
+        if (isValid) {
+          try {
+
+            const formData = {
+              name: nameInput.value,
+              email: emailInput.value,
+              password: passwordInput.value
+            };
+
+            const jsonString = JSON.stringify(formData);
+            const parsedData = JSON.parse(jsonString); 
+
+            alert('Form submitted!');
+
+          } catch (error) {
+            alert('An error occurred while processing the form.');
+            console.error('JSON Parse Error:', error);
+          }
+        }
+      });
+
+    
+      resetBtn.addEventListener('click', () => {
+        nameInput.value = '';
+        emailInput.value = '';
+        passwordInput.value = '';
+
+        nameError.textContent = '';
+        emailError.textContent = '';
+        passwordError.textContent = '';
+      });
+    });
+  </script>
+</body>
+</html>
