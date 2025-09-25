@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sayHello(name,callback){
+        console.log("hello",name);
+        callback();
+        }
+
+        sayHello("sradha",() => {
+            console.log("Welcome to oneteam");
+        });
+
+
+        function task(callback){
+        setTimeout(() => {
+            console.log("Task is completed")
+            setTimeout(() => {
+            console.log("Task2 is completed")
+            setTimeout(() => {
+            console.log("Task3 is completed");
+        },3000)
+        },2000)
+        },1000);
+    }
+
+
+    function task(){
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve("task time is ending");
+            },1000);
+        })
+    }
+    
+    function task2(){
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve("task2 time is ending");
+            },2000);
+        })
+    }
+
+    function task3(){
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve("task3 time is ending");
+            },3000);
+        });
+    }
+
+    function taskFailed(){
+        return new Promise((resolve,reject) => {
+            setTimeout(() =>{
+                const failed = true;
+                if(failed){
+                    resolve("food is delivered");
+                }else{
+                    reject("food is not delivery")
+                }
+            },1000);
+        });
+    }
+
+     task().then((msg) => {
+        console.log(msg)
+        return task2();
+    }).then((abc) => {
+        console.log(abc)
+        return task3();
+    }).then((def) =>{
+        console.log(def);
+         return taskFailed();
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+
+    </script>
+</body>
+</html>
